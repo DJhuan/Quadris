@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUADRIS — Puzzle em 4 Direções</title>
+  <meta name="description" content="O famoso jogo Russo com 4 vezes mais loucura.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1 class="logo-title">QUADRIS</h1>
+  </header>
+
+  <main class="game-container">
+    <div class="board-wrapper">
+      <canvas id="gameCanvas" width="600" height="600"></canvas>
+
+      <div id="gameOverlay" class="game-overlay">
+        <div id="menuScreen" class="overlay-screen">
+          <h2 class="overlay-title">QUADRIS</h2>
+          <p class="overlay-desc">Instruções</p>
+          <div class="highlight-box">
+            • Você joga num tabuleiro 30x30, mas só as colunas e linhas centrais (em cruz)<br>
+            • No centro do tabuleiro há um cubo fixo 2x2<br>
+            • A cada peça jogada, a direção da gravidade muda<br>
+            • Complete linhas ou colunas na área jogável para ganhar pontos<br>
+          </div>
+          <button id="startBtn" class="btn-primary">INICIAR JOGO [Enter]</button>
+        </div>
+
+        <div id="pauseScreen" class="overlay-screen hidden">
+          <h2 class="overlay-title">JOGO PAUSADO</h2>
+          <p class="overlay-desc">Pressione P ou o botão abaixo para continuar</p>
+          <button id="resumeBtn" class="btn-primary">CONTINUAR [P]</button>
+        </div>
+
+        <div id="gameOverScreen" class="overlay-screen hidden">
+          <h2 class="overlay-title game-over">GAME OVER</h2>
+          <div class="final-score-container">
+            <span class="final-score-label">PONTUAÇÃO FINAL</span>
+            <span id="finalScoreValue" class="final-score-val">0000000</span>
+          </div>
+          <button id="restartBtn" class="btn-primary">JOGAR NOVAMENTE [Enter]</button>
+        </div>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <div class="panel-card stats-grid">
+        <div class="stat-item">
+          <span class="stat-label">SCORE</span>
+          <span id="scoreValue" class="stat-value">0000000</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">RECORDE</span>
+          <span id="highScoreValue" class="stat-value small">0000000</span>
+        </div>
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-label">NÍVEL</span>
+            <span id="levelValue" class="stat-value small">1</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">LINHAS</span>
+            <span id="linesValue" class="stat-value small">0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-card gravity-hud">
+        <span class="card-title">GRAVIDADE</span>
+        <div class="compass-container">
+          <div id="compassUp" class="compass-btn compass-up">↑</div>
+          <div id="compassLeft" class="compass-btn compass-left">←</div>
+          <div class="compass-center">●</div>
+          <div id="compassRight" class="compass-btn compass-right">→</div>
+          <div id="compassDown" class="compass-btn compass-down active">↓</div>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <span class="card-title">NEXT</span>
+        <div class="next-wrapper">
+          <canvas id="nextCanvas" width="110" height="110"></canvas>
+        </div>
+      </div>
+
+      <div class="panel-card controls-list">
+        <span class="card-title">CONTROLES</span>
+        <div class="control-entry">
+          <div class="key-group">
+            <kbd>WASD</kbd> ou <kbd>Setas</kbd>
+          </div>
+          <span class="control-desc">Mover</span>
+        </div>
+        <div class="control-entry">
+          <div class="key-group">
+            <kbd>Q</kbd><kbd>E</kbd>
+          </div>
+          <span class="control-desc">Girar peça</span>
+        </div>
+        <div class="control-entry">
+          <div class="key-group">
+            <kbd>Espaço</kbd>
+          </div>
+          <span class="control-desc">Queda rápida</span>
+        </div>
+        <div class="control-entry">
+          <div class="key-group">
+            <kbd>P</kbd>
+          </div>
+          <span class="control-desc">Pausar</span>
+        </div>
+      </div>
+
+      <div class="actions-bar">
+        <button id="pauseBtn" class="btn-secondary">Pausar (P)</button>
+      </div>
+    </aside>
+  </main>
+
+  <script src="js/pieces.js"></script>
+  <script src="js/collision.js"></script>
+  <script src="js/board.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
