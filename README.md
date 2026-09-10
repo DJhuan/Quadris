@@ -18,6 +18,8 @@ O Jogo foi feito usando HTML, CSS e JavaScript. O destaque aqui vai para o compo
 
 ## Link para o jogo no Github Pages
 
+[Clique aqui para ir para a página do jogo](https://djhuan.github.io/Quadris/)
+
 ## Licença
 
 Este software é licenciado sob os [Termos MIT](/LICENCE.md).
@@ -26,9 +28,9 @@ Este software é licenciado sob os [Termos MIT](/LICENCE.md).
 
 ```json
 {
-    "nome": "Quadris",
-    "descricao": "Jogo inspirado em Tetris. O objetivo é completar linhas/colunas e as peças se movem de acordo com a gravidade.",
-    "autores": "Jhuan Carlos Sabaini Dassie",
-    "turma": "14B",
+  "nome": "Quadris",
+  "descricao": "Jogo inspirado em Tetris. O objetivo é completar linhas/colunas e as peças se movem de acordo com a gravidade.",
+  "autores": "Jhuan Carlos Sabaini Dassie",
+  "turma": "14B"
 }
 ```
